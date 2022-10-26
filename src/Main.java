@@ -18,22 +18,18 @@ class Main {
         System.out.print("Enter number here (0-3): ");
         choice = in.nextInt();
         
-        if (choice > 3 && choice < 0) {
-            System.out.println("Error! Please try again.");
+        if ((choice > 3) || (choice < 0)) {
+            System.out.println("Wrong input! Please try again.");
         } else if (choice == 0) {
             System.out.println("\n----- End of transaction -----");
         } else if (choice == 1) {
-            main.cardNumber();
+            System.out.println("\nCard Number: " + card.getCardNumber());
             System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
         } else if (choice == 2) {
             main.balance();
         } else if (choice == 3) {
             main.withdraw();
         }
-    }
-    
-    public void cardNumber() {
-        System.out.println("\nCard Number: " + card.getCardNumber());
     }
     
     public void balance() {
