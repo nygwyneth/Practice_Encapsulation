@@ -25,14 +25,14 @@ class Card {
     
     public void calculateBalance() {
         int totalBal = defaultMoney + balanceAmount;
-        System.out.println("Total Balance: Php " + totalBal + "\n\n----- Deposit Success! -----");
+        System.out.println("Total Balance: Php " + totalBal + "\n\n----- DEPOSIT SUCCESSFUL -----");
     }
     
     public void withdrawMoney() {
         if (withdrawAmount <= getBalanceAmount()) {
             if (withdrawAmount%100 == 0) {
                 int withdrawTransaction = balanceAmount - withdrawAmount;
-                System.out.println("\n\n----- Withdraw Success! -----\nRemaining Balance: Php " + withdrawTransaction);
+                System.out.println("\n\n----- WITHDRAWAL REQUEST SUCCESSFUL! -----\nRemaining Balance: Php " + withdrawTransaction);
             } else {
             System.out.println("Error! Please try again.");
             }
