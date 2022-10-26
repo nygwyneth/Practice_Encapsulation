@@ -1,0 +1,25 @@
+JAVA ENCAPSULATION
+
+Create 2 Java Classes:
+    Main.java
+    Card.java 
+
+In Main.java, user can perform the following:
+    1) User can check the card information (Balance and Card Number) - DONE
+    2) User can add balance to their Card
+    3) User can withdraw money using their card
+        - If the amount to withdraw < remaining balance
+        - The amount to withdraw should be divisible by 100
+
+In Card.java, you should apply encapsulation approach (Getters and Setters)
+    1) setBalance
+    2) getBalance
+    3) withdrawMoney
+
+Note: All variable should be set to private and use a constructor in Card class 
+    to set a default balance and random card number to the user card.
+
+
+    > balance (int)
+    > cardNumber (int)
+    > withdraw (Method)
