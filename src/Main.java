@@ -4,18 +4,20 @@ class Main {
     
     static Scanner in = new Scanner(System.in);
     static Card card = new Card();
-    static Main main = new Main();
     
-    String options = "\n(0) Exit \n(1) Display Card Information \n(2) Deposit \n(3) Withdraw";
-    int choice, deposit, withdraw;
+    static String options = "\nChoose from the following to start transaction. \n(0) Exit \n(1) Display Card Information \n(2) Deposit \n(3) Withdraw";
+    static int choice, deposit, withdraw;
     
     public static void main(String[] args) {
-        main.startTransaction();
+        startTransaction();
     }
     
-    public void startTransaction() {
-        System.out.println("\nChoose from the following to start transaction." + options + "\n");
-        System.out.print("Enter number here (0-3): ");
+    public static void startTransaction() {
+        askUser();
+    }
+
+    public static void askUser() {
+        System.out.println(options + "\nEnter number here (0-3):");
         choice = in.nextInt();
         
         if ((choice > 3) || (choice < 0)) {
@@ -26,13 +28,13 @@ class Main {
             System.out.println("\nCard Number: " + card.getCardNumber());
             System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
         } else if (choice == 2) {
-            main.queryBalance();
+            queryBalance();
         } else if (choice == 3) {
-            main.queryWithdraw();
+            queryWithdraw();
         }
     }
     
-    public void queryBalance() {
+    public static void queryBalance() {
         System.out.print("\nEnter Amount to Deposit: Php ");
         deposit = in.nextInt();
         
@@ -40,7 +42,7 @@ class Main {
         card.calculateBalance();
     }
     
-    public void queryWithdraw() {
+    public static void queryWithdraw() {
         System.out.print("\nEnter Amount to Withdraw: Php ");
         withdraw = in.nextInt();
         

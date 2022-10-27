@@ -1,7 +1,7 @@
 class Card {
     
     private int balanceAmount, withdrawAmount, cardNumber;
-    private int defaultMoney = 1000;
+    // private int defaultMoney = 1000;
     
     public int getBalanceAmount() {
         return balanceAmount = 1000;
@@ -24,7 +24,7 @@ class Card {
     }
     
     public void calculateBalance() {
-        int totalBal = defaultMoney + balanceAmount;
+        int totalBal = balanceAmount + getBalanceAmount();
         System.out.println("Total Balance: Php " + totalBal + "\n\n----- DEPOSIT SUCCESSFUL -----");
     }
     
