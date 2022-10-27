@@ -26,13 +26,13 @@ class Main {
             System.out.println("\nCard Number: " + card.getCardNumber());
             System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
         } else if (choice == 2) {
-            main.balance();
+            main.queryBalance();
         } else if (choice == 3) {
-            main.withdraw();
+            main.queryWithdraw();
         }
     }
     
-    public void balance() {
+    public void queryBalance() {
         System.out.print("\nEnter Amount to Deposit: Php ");
         deposit = in.nextInt();
         
@@ -40,7 +40,7 @@ class Main {
         card.calculateBalance();
     }
     
-    public void withdraw() {
+    public void queryWithdraw() {
         System.out.print("\nEnter Amount to Withdraw: Php ");
         withdraw = in.nextInt();
         
