@@ -17,11 +17,11 @@ class Main {
     }
 
     public static void askUser() {
-        System.out.println(options + "\nEnter number here (0-3):");
+        System.out.print(options + "\n\nEnter number here (0-3): ");
         choice = in.nextInt();
         
         if ((choice > 3) || (choice < 0)) {
-            System.out.println("Wrong input! Please try again.");
+            System.out.println("\n----- Wrong input! Please try again. -----");
         } else if (choice == 0) {
             System.out.println("\n----- End of transaction -----");
         } else if (choice == 1) {
