@@ -20,18 +20,19 @@ class Main {
         System.out.print(options + "\n\nEnter number here (0-3): ");
         choice = in.nextInt();
         
-        if ((choice > 3) || (choice < 0)) {
-            System.out.println("\n----- Wrong input! Please try again. -----");
-        } else if (choice == 0) {
-            System.out.println("\n----- End of transaction -----");
-        } else if (choice == 1) {
-            System.out.println("\nCard Number: " + card.getCardNumber());
-            System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
-        } else if (choice == 2) {
-            queryBalance();
-        } else if (choice == 3) {
-            queryWithdraw();
+        while (choice != 0) {
+            if ((choice > 3) || (choice < 0)) {
+                System.out.println("\n----- Wrong input! Please try again. -----");
+            } else if (choice == 1) {
+                System.out.println("\nCard Number: " + card.getCardNumber());
+                System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
+            } else if (choice == 2) {
+                queryBalance();
+            } else if (choice == 3) {
+                queryWithdraw();
+            }
         }
+        System.out.println("\n----- End of transaction -----");
     }
     
     public static void queryBalance() {
