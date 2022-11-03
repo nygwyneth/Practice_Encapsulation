@@ -19,7 +19,7 @@ class Main {
     public static void askUser() {
         System.out.print(options + "\n\nEnter number here (0-3): ");
         choice = in.nextInt();
-        // guard clause if one line ang if-else statements
+        
         if ((choice > 3) || (choice < 0)) System.out.println("\n----- Wrong input! Please try again. -----");
         else if (choice == 0) System.out.println("\n----- End of transaction -----");
         else if (choice == 1) {
@@ -34,7 +34,7 @@ class Main {
         deposit = in.nextInt();
         
         card.setBalanceAmount(deposit);
-        card.calculateBalance();
+        card.getBalanceAmount();
     }
     
     public static void queryWithdraw() {
