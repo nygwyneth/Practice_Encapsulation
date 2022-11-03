@@ -34,7 +34,7 @@ class Main {
         deposit = in.nextInt();
         
         card.setBalanceAmount(deposit);
-        card.getBalanceAmount();
+        card.displayBalance();
     }
     
     public static void queryWithdraw() {
