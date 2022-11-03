@@ -33,7 +33,7 @@ class Card {
 
     public void withdrawMoney() {
         if (withdrawAmount <= balanceAmount) {
-            if (withdrawAmount%100 == 0) System.out.println("\n----- WITHDRAWAL REQUEST SUCCESSFUL! -----\nRemaining Balance: Php " + balanceAmount + "\n");
+            if (withdrawAmount%100 == 0) System.out.println("\n----- WITHDRAWAL REQUEST SUCCESSFUL -----\nRemaining Balance: Php " + balanceAmount + "\n");
             else System.out.println("\n----- Error! Please try again. -----"); 
         } else System.out.println("\n----- Error! Invalid amount. -----");
     }
