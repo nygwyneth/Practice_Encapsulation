@@ -3,7 +3,7 @@ import java.util.*;
 class Main {
     
     static Scanner in = new Scanner(System.in);
-    static Card card = new Card();
+    static Card card = new Card(1000, 92621083);
     
     static String options = "\nChoose from the following to start transaction. \n(0) Exit \n(1) Display Card Information \n(2) Deposit \n(3) Withdraw";
     static int choice, deposit, withdraw;
@@ -19,19 +19,14 @@ class Main {
     public static void askUser() {
         System.out.print(options + "\n\nEnter number here (0-3): ");
         choice = in.nextInt();
-        
-        if ((choice > 3) || (choice < 0)) {
-            System.out.println("\n----- Wrong input! Please try again. -----");
-        } else if (choice == 0) {
-            System.out.println("\n----- End of transaction -----");
-        } else if (choice == 1) {
+        // guard clause if one line ang if-else statements
+        if ((choice > 3) || (choice < 0)) System.out.println("\n----- Wrong input! Please try again. -----");
+        else if (choice == 0) System.out.println("\n----- End of transaction -----");
+        else if (choice == 1) {
             System.out.println("\nCard Number: " + card.getCardNumber());
             System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
-        } else if (choice == 2) {
-            queryBalance();
-        } else if (choice == 3) {
-            queryWithdraw();
-        }
+        } else if (choice == 2) queryBalance();
+        else if (choice == 3) queryWithdraw();
     }
     
     public static void queryBalance() {
@@ -46,7 +41,7 @@ class Main {
         System.out.print("\nEnter Amount to Withdraw: Php ");
         withdraw = in.nextInt();
         
-        card.setWithdrawAmount(withdraw);
+        card.withdrawAmount(withdraw);
         card.withdrawMoney();
     }
 }

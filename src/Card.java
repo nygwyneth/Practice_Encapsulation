@@ -2,8 +2,13 @@ class Card {
     
     private int balanceAmount, withdrawAmount, cardNumber;
     
+    Card (int balanceAmount, int cardNumber) {
+        this.balanceAmount = balanceAmount;
+        this.cardNumber = cardNumber;
+    }
+
     public int getBalanceAmount() {
-        return balanceAmount = 1000;
+        return balanceAmount;
     }
     
     public int getWithdrawAmount() {
@@ -11,15 +16,15 @@ class Card {
     }
     
     public int getCardNumber() {
-        return cardNumber = 92621083;
+        return cardNumber;
     }
     
     public void setBalanceAmount (int balanceAmount) {
-        this.balanceAmount = balanceAmount;
+        this.balanceAmount += balanceAmount;
     }
     
-    public void setWithdrawAmount (int withdrawAmount) {
-        this.withdrawAmount = withdrawAmount;
+    public void withdrawAmount (int withdrawAmount) {
+        this.balanceAmount -= withdrawAmount;
     }
     
     public void calculateBalance() {
@@ -32,11 +37,7 @@ class Card {
             if (withdrawAmount%100 == 0) {
                 int withdrawTransaction = balanceAmount - withdrawAmount;
                 System.out.println("\n\n----- WITHDRAWAL REQUEST SUCCESSFUL! -----\nRemaining Balance: Php " + withdrawTransaction + "\n");
-            } else {
-            System.out.println("\n----- Error! Please try again. -----");
-            }
-        } else {
-            System.out.println("\n----- Error! Invalid amount. -----");
-        }
+            } else System.out.println("\n----- Error! Please try again. -----"); 
+        } else System.out.println("\n----- Error! Invalid amount. -----");
     }
 }
