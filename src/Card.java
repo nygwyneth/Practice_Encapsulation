@@ -22,6 +22,10 @@ class Card {
     public void setBalanceAmount (int balanceAmount) {
         this.balanceAmount += balanceAmount;
     }
+
+    public void displayBalance() {
+        System.out.println("Total Balance: Php " + balanceAmount + "\n\n----- DEPOSIT SUCCESSFUL -----");
+    }
     
     public void withdrawAmount (int withdrawAmount) {
         if (withdrawAmount <= balanceAmount) {
@@ -30,9 +34,5 @@ class Card {
                 System.out.println("\n----- WITHDRAWAL REQUEST SUCCESSFUL -----\nRemaining Balance: Php " + balanceAmount + "\n");
             } else System.out.println("\n----- Error! Please try again. -----"); 
         } else System.out.println("\n----- Error! Invalid amount. -----");
-    }
-
-    public void displayBalance() {
-        System.out.println("Total Balance: Php " + balanceAmount + "\n\n----- DEPOSIT SUCCESSFUL -----");
     }
 }
