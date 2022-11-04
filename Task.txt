@@ -18,8 +18,3 @@ In Card.java, you should apply encapsulation approach (Getters and Setters)
 
 Note: All variable should be set to private and use a constructor in Card class 
     to set a default balance and random card number to the user card.
-
-
-    > balance (int)
-    > cardNumber (int)
-    > withdraw (Method)
