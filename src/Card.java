@@ -24,17 +24,15 @@ class Card {
     }
     
     public void withdrawAmount (int withdrawAmount) {
-        this.balanceAmount -= withdrawAmount;
+        if (withdrawAmount <= balanceAmount) {
+            if (withdrawAmount%100 == 0) { 
+                this.balanceAmount -= withdrawAmount;
+                System.out.println("\n----- WITHDRAWAL REQUEST SUCCESSFUL -----\nRemaining Balance: Php " + balanceAmount + "\n");
+            } else System.out.println("\n----- Error! Please try again. -----"); 
+        } else System.out.println("\n----- Error! Invalid amount. -----");
     }
 
     public void displayBalance() {
         System.out.println("Total Balance: Php " + balanceAmount + "\n\n----- DEPOSIT SUCCESSFUL -----");
-    }
-
-    public void withdrawMoney() {
-        if (withdrawAmount <= balanceAmount) {
-            if (withdrawAmount%100 == 0) System.out.println("\n----- WITHDRAWAL REQUEST SUCCESSFUL -----\nRemaining Balance: Php " + balanceAmount + "\n");
-            else System.out.println("\n----- Error! Please try again. -----"); 
-        } else System.out.println("\n----- Error! Invalid amount. -----");
     }
 }

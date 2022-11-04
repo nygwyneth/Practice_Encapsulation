@@ -42,6 +42,5 @@ class Main {
         withdraw = in.nextInt();
         
         card.withdrawAmount(withdraw);
-        card.withdrawMoney();
     }
 }
