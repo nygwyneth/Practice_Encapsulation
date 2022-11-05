@@ -1,11 +1,14 @@
 import java.util.*;
 
 class Main {
-    
     static Scanner in = new Scanner(System.in);
-    static Card card = new Card(1000, 92621083);
-    
-    static String options = "\nChoose from the following to start transaction. \n(0) Exit \n(1) Display Card Information \n(2) Deposit \n(3) Withdraw";
+    static Card card = new Card(1000, 12312);
+    static String options = 
+        "\nChoose from the following to start transaction.\n" +
+        "(1) Exit\n" + 
+        "(2) Display Card Information\n" + 
+        "(3) Deposit\n" + 
+        "(4) Withdraw";
     static int choice, deposit, withdraw;
     
     public static void main(String[] args) {
@@ -13,20 +16,26 @@ class Main {
     }
     
     public static void startTransaction() {
-        askUser();
+        while(true) askUser();
     }
 
     public static void askUser() {
         System.out.print(options + "\n\nEnter number here (0-3): ");
         choice = in.nextInt();
-        
-        if ((choice > 3) || (choice < 0)) System.out.println("\n----- Wrong input! Please try again. -----");
-        else if (choice == 0) System.out.println("\n----- End of transaction -----");
-        else if (choice == 1) {
-            System.out.println("\nCard Number: " + card.getCardNumber());
-            System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
-        } else if (choice == 2) queryBalance();
-        else if (choice == 3) queryWithdraw();
+
+        switch(choice) {
+            case 1 -> { 
+                System.out.println("\n----- Program Ends -----");
+                System.exit(0);
+            }
+            case 2 -> {
+                System.out.println("\nCard Number: " + card.getCardNumber());
+                System.out.println("Balance Amount: Php " + card.getBalanceAmount() + "\n\n----- End of transaction -----");
+            }
+            case 3 -> { queryBalance(); }
+            case 4 -> { queryWithdraw(); }
+            default -> { System.out.println("\n----- Wrong input! Please try again. -----"); }
+        }
     }
     
     public static void queryBalance() {
